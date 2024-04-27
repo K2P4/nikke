@@ -1,0 +1,55 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: "Sora", sans-serif;
+	background-color: #fafafa;
+}
+
+.bodyFont {
+	font-family: "Passion One", sans-serif;
+}
+
+.slick-slide {
+	margin-right: 20px; /* Adjust the right margin as needed */
+}
+
+.slick-prev:before,
+.slick-next:before {
+	font-size: 30px;
+	color: #ff9800;
+	
+}
+
+.slick-dots li button:before {
+	
+	font-size: 12px;
+	color: #ff9800;
+	margin-top: 35px
+
+
+}
+
+.aboutFont{
+	font-size: 15px;
+
+}
+
+
+
+@layer components {
+	.Center {
+		@apply w-[50%] flex justify-center flex-col h-screen   m-auto;
+	}
+}
+
+@layer components {
+	.Mobile {
+		@apply w-full flex justify-center flex-col h-screen  m-auto;
+	}
+}
