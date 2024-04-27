@@ -42,7 +42,7 @@ const AboutPage = () => {
 				showAnimation &&
 				"animate__animated  animate__slideInLeft my-20  sm:mb-20 duration-1000"
 			} `}>
-			<div className=" w-full  bg-slate-50 shadow-sm shadow-slate-200 sm:bg-slate-50 p-2 sm:px-0  border-slate-300 sm:shadow-sm sm:shadow-slate-500 sm:w-[80%] mx-auto h-auto my-28 pt-4  sm:rounded-lg  ">
+			<div className=" w-full  bg-slate-50 shadow-sm shadow-white sm:shadow-slate-200 sm:bg-slate-50 p-2 sm:px-0  border-slate-300 sm:shadow-sm  sm:w-[80%] mx-auto h-auto my-28 pt-4  sm:rounded-lg  ">
 				<div className="flex flex-col gap-1 align-middle items-center">
 					<div className="animate__bounceInLeft bodyFont flex flex-col gap-1 sm:gap-0  animate__animated   duration-700 transition-transform ">
 						<p className="text-center text-3xl  tracking-widest aboutFont  text-orange-500 sm:text-4xl">
