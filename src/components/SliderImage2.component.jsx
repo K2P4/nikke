@@ -53,7 +53,7 @@ const SliderImage2Component = () => {
 				<div className="sm:w-[35%]  hover:opacity-90 duration-500 relative  ">
 					<img
 						className=""
-						src="https://www.converse.com/on/demandware.static/-/Library-Sites-SharedLibrary/default/dw6c46638c/firstspirit/media/homepage_1/2024_spring_1/03_march/D_Converse_04_04_24_GBL_NA_New_Arrivals_Women.jpg"
+						src="https://i.pinimg.com/564x/4f/c8/da/4fc8da507ecf8b13733c9a1d218a937f.jpg"
 						alt=""
 					/>
 
@@ -79,7 +79,7 @@ const SliderImage2Component = () => {
 				<div className="sm:w-[35%] hover:opacity-90 duration-500 relative  ">
 					<img
 						className=""
-						src="https://www.converse.com/on/demandware.static/-/Library-Sites-SharedLibrary/default/dw81d301c6/firstspirit/media/homepage_1/2024_summer_1/01_april_1/D_Converse_04_04_24_GBL_NA_New_Arrivals_Men.jpg"
+						src="https://i.pinimg.com/564x/43/14/4e/43144ec2c25770bb8bf766c7f547f62c.jpg"
 						alt=""
 					/>
 
@@ -106,7 +106,7 @@ const SliderImage2Component = () => {
 				<div className="sm:w-[35%]  hover:opacity-90 duration-500 relative  ">
 					<img
 						className=""
-						src="https://www.converse.com/on/demandware.static/-/Library-Sites-SharedLibrary/default/dw13276789/firstspirit/media/homepage_1/2024_summer_1/01_april_1/D_Converse_04_04_24_GBL_NA_New_Arrivals_Kids.jpg"
+						src="https://i.pinimg.com/564x/5b/8a/ad/5b8aad7abf708afa4f602d168a234e69.jpg"
 						alt=""
 					/>
 
