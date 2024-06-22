@@ -49,7 +49,7 @@ const SliderImage2Component = () => {
 			<h1 className=" text-gray-800 bodyFont ms-5   border-b-orange-300 border-b sm:w-[20%]  text-3xl header font-bold tracking-wide ">
 				Shop By Category
 			</h1>
-			<div className="w-full flex  flex-col sm:flex-row items-center   mt-8 h-full">
+			{/* <div className="w-full flex  flex-col sm:flex-row items-center   mt-8 h-full">
 				<div className="sm:w-[35%]  hover:opacity-90 duration-500 relative  ">
 					<img
 						className=""
@@ -129,7 +129,7 @@ const SliderImage2Component = () => {
 						SHOP UNISEX
 					</button>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
