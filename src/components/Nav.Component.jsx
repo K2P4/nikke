@@ -375,7 +375,7 @@ const NavComponent = () => {
 								<Link to="/dashboard">
 									<img
 										className="   w-16 h-16"
-										src="https://i.ibb.co/4RmmXvg/logo.png"
+										src="https://cdn-icons-png.flaticon.com/128/1785/1785348.png"
 										alt=""
 									/>
 								</Link>
