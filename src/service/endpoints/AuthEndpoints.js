@@ -6,15 +6,15 @@ const authEndpoints = Apiservice.injectEndpoints({
 	endpoints: (builder) => ({
 		Signin: builder.mutation({
 			query: (arg) => ({
-				url: "/login",
-				method: "POST",
+				url: "/user",
+				method: "GET",
 				body: arg,
 			}),
 		}),
 
 		Signup: builder.mutation({
 			query: (arg) => ({
-				url: "/register",
+				url: "/user",
 				method: "POST",
 				body: arg,
 			}),
@@ -22,14 +22,14 @@ const authEndpoints = Apiservice.injectEndpoints({
 
 		getProfile: builder.query({
 			query: () => ({
-				url: "/user-profile",
+				url: "/user",
 				method: "GET",
 			}),
 		}),
 
 		logout: builder.mutation({
 			query: () => ({
-				url: "/user-logout",
+				url: "/user",
 				method: "POST",
 			}),
 			invalidatesTags: ["auth"],

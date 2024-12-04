@@ -32,21 +32,44 @@ const AdminPage = () => {
 			.min(8, "password shold be 8 letters"),
 	});
 
-	useEffect(() => {
-		if (data?.data?.success) {
-			nav("/dashboard");
-			toast.success("Login Successfully");
-		}
-	}, [data]);
+	// useEffect(() => {
+	// 	if (localStorage.getItem("token")) {
+	// 		nav("/dashboard");
+			
+	// 	}
+	// }, [data]);
 
 	const handleSubmit = async (value, action) => {
 		console.log(value);
 
-		await fun(value);
+		const filterData = data?.filter((item) => item?.email == value.email);
+
+		if (filterData[0].password == value.password) {
+			if (localStorage.getItem("token")) {
+				alert("You are already logged in here !");
+			} else if (check) {
+				localStorage.setItem("token", JSON.stringify(value));
+				nav("/dashboard");
+				toast.success("Login Successfully")
+			} else if (!check) {
+				localStorage.removeItem("token");
+				nav("/dashboard");
+				toast.success("Login Successfully")
+
+			}
+		} else {
+			toast.success("Password Incorrect !")
+		}
+
+		action.reset();
+		
+
+
 
 		
-		action.reset();
-		toast.success("Login Successfully");
+
+		
+		
 	};
 
 	return (

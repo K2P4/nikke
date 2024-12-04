@@ -53,7 +53,7 @@ const RegisterPage = () => {
 	const handleSubmit = async (value) => {
 		console.log(value);
 		await fun(value);
-		if (data.isSuccess) {
+		if (data) {
 			nav("/");
 		}
 

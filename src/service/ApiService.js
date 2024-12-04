@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const Apiservice = createApi({
 	reducerPath: "api",
 	baseQuery: fetchBaseQuery({
-		baseUrl: "https://contact.sankyitar.store/api/v1/",
+		baseUrl: "https://project-data-2-j6db.onrender.com/",
 
 		prepareHeaders: (headers, { getState }) => {
 			const token = localStorage.getItem("token");
