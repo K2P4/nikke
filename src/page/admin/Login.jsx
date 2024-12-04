@@ -8,13 +8,14 @@ import { ButtonComponent, ErrorComponent } from "../../components";
 import * as yup from "yup";
 import { toast } from "sonner";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useSigninMutation } from "../../service/endpoints/AuthEndpoints";
+import { useSigninQuery } from "../../service/endpoints/AuthEndpoints";
 import AuthGuard from "../../components/guard/AuthGuard";
 
 const AdminPage = () => {
-	const [fun, data] = useSigninMutation();
+	const {data} = useSigninQuery();
+	const [check, setCheck] = useState();
 	const nav = useNavigate();
-	// const { isChecked, disabled, handleCheckBox } = useContext(SneakerContext);
+	
 
 	const initailValue = {
 		email: "",
@@ -32,33 +33,26 @@ const AdminPage = () => {
 			.min(8, "password shold be 8 letters"),
 	});
 
-	// useEffect(() => {
-	// 	if (localStorage.getItem("token")) {
-	// 		nav("/dashboard");
+	useEffect(() => {
+		if (localStorage.getItem("token")) {
+			nav("/dashboard");
 			
-	// 	}
-	// }, [data]);
+		}
+	}, [data]);
 
 	const handleSubmit = async (value, action) => {
-		console.log(value);
+		console.log(value,data);
 
 		const filterData = data?.filter((item) => item?.email == value.email);
+		console.log(filterData,data);
 
 		if (filterData[0].password == value.password) {
-			if (localStorage.getItem("token")) {
-				alert("You are already logged in here !");
-			} else if (check) {
 				localStorage.setItem("token", JSON.stringify(value));
 				nav("/dashboard");
 				toast.success("Login Successfully")
-			} else if (!check) {
-				localStorage.removeItem("token");
-				nav("/dashboard");
-				toast.success("Login Successfully")
-
-			}
+		
 		} else {
-			toast.success("Password Incorrect !")
+			toast.success("Password Incorrect Try Again !")
 		}
 
 		action.reset();
