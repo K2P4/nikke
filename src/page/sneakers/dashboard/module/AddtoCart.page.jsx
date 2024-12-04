@@ -144,8 +144,8 @@ const AddtoCartPage = () => {
 															</h3>
 
 															<div className="my-4 flex  items-center gap-3  sm:gap-4 sm:my-2">
-																<h3 className="text-sm">{data?.user?.name}</h3>{" "}
-																<h3 className="text-sm">{data?.user?.email}</h3>
+																<h3 className="text-sm">{data?.name}</h3>{" "}
+																<h3 className="text-sm">{data?.email}</h3>
 															</div>
 														</div>
 
