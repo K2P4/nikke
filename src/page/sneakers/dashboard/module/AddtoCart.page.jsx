@@ -2,8 +2,9 @@
 
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { SneakerContext } from "../../../../service/store/SneakerContextProvider";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams ,useLocation} from "react-router-dom";
 import { CartListItemComponent, EmptyComponent } from "../../../../components";
+
 import {
 	Sheet,
 	SheetContent,
@@ -24,7 +25,6 @@ import {
 	AlertDialogTitle,
 	AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-
 import * as yup from "yup";
 import { toast } from "sonner";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -32,13 +32,13 @@ import { useGetProfileQuery } from "../../../../service/endpoints/AuthEndpoints"
 import { useCreateMutation } from "../../../../service/endpoints/Contact";
 
 const AddtoCartPage = () => {
-	const { cart, setToggle, setCart, cartToggle, setCartToggle, toggle } =
-		useContext(SneakerContext);
+	const { cart, setToggle, setCart, cartToggle, setCartToggle, toggle } = useContext(SneakerContext);
 	const [CreateFun, FunLoad] = useCreateMutation();
+	const location = useLocation();
 	const [success, setSuccess] = useState(false);
-	const { data } = useGetProfileQuery();
-
-	console.log(FunLoad);
+	const userData = location.state?.filterData;
+	
+	console.log(userData);
 
 	const [order, setOrder] = useState(false);
 	const MenuRef = useRef();
@@ -144,8 +144,8 @@ const AddtoCartPage = () => {
 															</h3>
 
 															<div className="my-4 flex  items-center gap-3  sm:gap-4 sm:my-2">
-																<h3 className="text-sm">{data?.name}</h3>{" "}
-																<h3 className="text-sm">{data?.email}</h3>
+																<h3 className="text-sm">{userData?.name}</h3>{" "}
+																<h3 className="text-sm">{userData?.email}</h3>
 															</div>
 														</div>
 

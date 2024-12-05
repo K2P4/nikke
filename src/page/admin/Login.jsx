@@ -48,7 +48,7 @@ const AdminPage = () => {
 
 		if (filterData[0].password == value.password) {
 				localStorage.setItem("token", JSON.stringify(value));
-				nav("/dashboard");
+				nav("/dashboard", { state: { filterData: filterData } });
 				toast.success("Login Successfully")
 		
 		} else {
