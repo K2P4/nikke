@@ -84,7 +84,7 @@ const NavComponent = () => {
 	};
 
 	const handleDashboard = () => {
-		nav("/dashboard");
+		nav("/");
 	};
 
 	const handleSubmit = (event) => {
@@ -95,13 +95,13 @@ const NavComponent = () => {
 
 		setFilterCart(filtered);
 
-		nav(`/dashboard/search/${search}`);
+		nav(`/search/${search}`);
 	};
 
 	const handleLogout = async () => {
 		await RemoveFun();
 		localStorage.removeItem("token");
-		nav("/");
+		nav("/login");
 		toast.success("Logout Successfully");
 	};
 
@@ -111,7 +111,7 @@ const NavComponent = () => {
 	};
 
 	const handleSection = (route) => {
-		nav(`/dashboard/${route}`);
+		nav(`/${route}`);
 		setDrawerToggle(false);
 	};
 
@@ -298,7 +298,7 @@ const NavComponent = () => {
 										</li>
 
 										<li
-											onClick={() => scrollToSection("about", "/dashboard")}
+											onClick={() => scrollToSection("about", "/")}
 											className="flex items-center w-full  select-none ">
 											<a className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 												<svg
@@ -320,7 +320,7 @@ const NavComponent = () => {
 										</li>
 
 										<li
-											onClick={() => scrollToSection("contact", "/dashboard")}
+											onClick={() => scrollToSection("contact", "/")}
 											className="flex items-center w-full  select-none ">
 											<a className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 												<svg
@@ -372,7 +372,7 @@ const NavComponent = () => {
 							<li
 								id="logo"
 								className="text-xl   select-none tracking-wide  font-bold  text-orange-500">
-								<Link to="/dashboard">
+								<Link to="/">
 									<img
 										className="   w-16 h-16"
 										src="https://cdn-icons-png.flaticon.com/128/1785/1785348.png"
@@ -382,21 +382,21 @@ const NavComponent = () => {
 							</li>
 
 							<li className="text-gray-500 tracking-wide select-none active:text-orange-600 hover:text-orange-500 hover:font-medium   active:border-b-2 transition-transform duration-200  active:border-b-orange-500   active:font-bold  ">
-								<NavLink to="/dashboard/collections">Collections</NavLink>
+								<NavLink to="/collections">Collections</NavLink>
 							</li>
 
 							<li className="text-gray-500 tracking-wide select-none hover:text-orange-500 hover:font-medium active:border-b-2 transition-transform duration-200  active:border-b-orange-500  active:text-gray-900 active:font-bold  ">
-								<NavLink to="/dashboard/men">Men</NavLink>
+								<NavLink to="/men">Men</NavLink>
 							</li>
 
 							<li className="text-gray-500 tracking-wide select-none hover:text-orange-500 hover:font-medium active:border-b-2 transition-transform duration-200  active:border-b-orange-500  active:text-gray-900 active:font-bold  ">
-								<NavLink to="/dashboard/women">Women</NavLink>
+								<NavLink to="/women">Women</NavLink>
 							</li>
 
 							<li className="text-gray-500 tracking-wide select-none hover:text-orange-500 hover:font-medium active:border-b-2 transition-transform duration-200  active:border-b-orange-500  active:text-gray-900 active:font-bold  ">
 								<a
 									className=" duration-1000 "
-									onClick={() => scrollToSection("about", "/dashboard")}>
+									onClick={() => scrollToSection("about", "/")}>
 									About
 								</a>
 							</li>
@@ -405,7 +405,7 @@ const NavComponent = () => {
 								onClick={() => scrollToAbout("contact")}
 								className="text-gray-500 tracking-wide select-none active:border-b-2   hover:text-orange-500 hover:font-medium transition-transform duration-200  active:border-b-orange-500  active:text-gray-900 active:font-bold  ">
 								<a
-									onClick={() => scrollToSection("contact", "/dashboard")}
+									onClick={() => scrollToSection("contact", "/")}
 									className=" duration-1000 ">
 									Contact
 								</a>
@@ -415,7 +415,7 @@ const NavComponent = () => {
 						{/* logo*/}
 						<div className=" flex sm:hidden ">
 							<h2
-								onClick={() => nav("/dashboard")}
+								onClick={() => nav("/")}
 								className="flex items-center  gap-1 text-orange-500 text-xl font-bold">
 								NIKEE
 								<img

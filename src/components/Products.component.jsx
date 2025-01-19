@@ -14,7 +14,13 @@ const ProductsComponent = ({ item }) => {
 
 
 	const handleDetail = () => {
-		nav(`/dashboard/detail/${item.id}`, { state: { item } });
+		if (localStorage.getItem("token")){
+		nav(`/detail/${item.id}`, { state: { item } });
+
+		}else{
+		nav('/login');
+
+		}
 	};
 
 	return (

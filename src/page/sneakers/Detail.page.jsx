@@ -83,6 +83,7 @@ const DetailPage = () => {
 	);
 
 	const toggleCart = () => {
+		
 		const newCart = {
 			id: data.id,
 			quantity: number,

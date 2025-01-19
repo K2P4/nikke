@@ -36,10 +36,8 @@ const AddtoCartPage = () => {
 	const [CreateFun, FunLoad] = useCreateMutation();
 	const location = useLocation();
 	const [success, setSuccess] = useState(false);
-	const userData = location.state?.filterData;
-	
-	console.log(userData);
-
+	const {data}  = useGetProfileQuery();
+	console.log(data);
 	const [order, setOrder] = useState(false);
 	const MenuRef = useRef();
 
@@ -144,8 +142,9 @@ const AddtoCartPage = () => {
 															</h3>
 
 															<div className="my-4 flex  items-center gap-3  sm:gap-4 sm:my-2">
-																<h3 className="text-sm">{userData?.name}</h3>{" "}
-																<h3 className="text-sm">{userData?.email}</h3>
+																<h3 className="text-sm">{data?.user?.name}</h3>{" "}
+																<h3 className="text-sm">{data?.user?.email}</h3>
+																
 															</div>
 														</div>
 

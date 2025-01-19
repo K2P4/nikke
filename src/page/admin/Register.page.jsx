@@ -51,10 +51,11 @@ const RegisterPage = () => {
 	});
 
 	const handleSubmit = async (value) => {
-		console.log(value);
-		await fun(value);
-		if (data) {
+      	const response =await fun(value);
+		if (response?.data.success) {
 			nav("/");
+		}else{
+			alert('Try again your information is wrong!')
 		}
 
 		toast.success("Register Successfully");

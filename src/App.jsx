@@ -30,12 +30,12 @@ const App = () => {
 			
 			<div className="w-full h-screen mx-auto ">
 				<Routes>
-					<Route path="/" element={<AdminPage />} />
+					<Route path="/login" element={<AdminPage />} />
 					<Route path="/register" element={<RegisterPage />} />
 
 					<Route path="*" index element={<ErrorComponent />} />
 
-					<Route path="/dashboard" element={<NavComponent />}>
+					<Route path="/" element={<NavComponent />}>
 						<Route index element={<DashboardPage />} />
 
 						<Route path="men" element={<MenPage />} />

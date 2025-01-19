@@ -8,15 +8,15 @@ const SliderImage2Component = () => {
 		const [showAnimation, setShowAnimation] = useState(false);
 
 	const handleWomen = () => {
-		nav("/dashboard/women");
+		nav("/women");
 	};
 
 	const handleMen = () => {
-		nav("/dashboard/men");
+		nav("/men");
 	};
 
 	const handleUnisex = () => {
-		nav("/dashboard/collections");
+		nav("/collections");
 	};
 
 	useEffect(() => {

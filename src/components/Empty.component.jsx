@@ -11,7 +11,7 @@ const EmptyComponent = () => {
 
 	const handleBack = () => {
 		setToggle(false);
-		nav("/dashboard/collections");
+		nav("/collections");
 		setCartToggle(!cartToggle);
 	};
 

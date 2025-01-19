@@ -27,7 +27,7 @@ const BestSellerComponent = () => {
 		const nav = useNavigate();
 
 		const handleDetail = () => {
-			nav(`/dashboard/collections`);
+			nav(`/collections`);
 		};
 
 		const toggleFavourite = (favId,favName,FavImage,FavPrice) => {

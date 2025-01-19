@@ -14,7 +14,7 @@ const SellerProductComponent = ({ item: { id, image, name, price } }) => {
 
 	
 	const handleDetail = () => {
-		nav(`/dashboard/collections`);
+		nav(`/collections`);
 	};
 
 	const toggleFavourite = () => {

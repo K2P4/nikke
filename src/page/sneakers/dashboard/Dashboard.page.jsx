@@ -36,19 +36,20 @@ import "../../../../node_modules/animate.css/animate.min.css";
 import { SneakerContext } from "../../../service/store/SneakerContextProvider";
 import CustomerComponent from "../../../components/Customer.component";
 import ServiceComponent from "../../../components/Service.component";
+import { useGetProfileQuery } from "../../../service/endpoints/AuthEndpoints";
 
 const DashboardPage = () => {
 	const { data, loading } = useFetch(PopularService, "popular");
 	const [showAnimation, setShowAnimation] = useState(false);
-
 	const { toggleAnimation, setoogleAnimation } = useContext(SneakerContext);
-
-	console.log(toggleAnimation);
-
 	const nav = useNavigate();
 
 	const hanldeShop = () => {
-		nav("/dashboard/collections");
+		if (!localStorage.getItem("token")){
+			nav('/login')
+		}else{
+		nav("/collections");
+		}
 	};
 
 	useEffect(() => {

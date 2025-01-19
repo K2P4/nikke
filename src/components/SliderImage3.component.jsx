@@ -8,7 +8,7 @@ const SliderImage3Component = () => {
 
 	const nav = useNavigate();
 	const handleShop = () => {
-		nav("/dashboard/collections");
+		nav("/collections");
 	};
 
 	useEffect(() => {

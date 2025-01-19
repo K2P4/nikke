@@ -8,11 +8,11 @@ import { ButtonComponent, ErrorComponent } from "../../components";
 import * as yup from "yup";
 import { toast } from "sonner";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useSigninQuery } from "../../service/endpoints/AuthEndpoints";
+import { useSigninMutation } from "../../service/endpoints/AuthEndpoints";
 import AuthGuard from "../../components/guard/AuthGuard";
 
 const AdminPage = () => {
-	const {data} = useSigninQuery();
+	const [signin,data] = useSigninMutation();
 	const [check, setCheck] = useState();
 	const nav = useNavigate();
 	
@@ -35,35 +35,15 @@ const AdminPage = () => {
 
 	useEffect(() => {
 		if (localStorage.getItem("token")) {
-			nav("/dashboard");
-			
+			nav("/");		
 		}
+		
 	}, [data]);
 
 	const handleSubmit = async (value, action) => {
-		console.log(value,data);
 
-		const filterData = data?.filter((item) => item?.email == value.email);
-		console.log(filterData,data);
-
-		if (filterData[0].password == value.password) {
-				localStorage.setItem("token", JSON.stringify(value));
-				nav("/dashboard", { state: { filterData: filterData } });
-				toast.success("Login Successfully")
-		
-		} else {
-			toast.success("Password Incorrect Try Again !")
-		}
-
-		action.reset();
-		
-
-
-
-		
-
-		
-		
+		await signin(value);
+		action.reset();	
 	};
 
 	return (

@@ -41,7 +41,6 @@ const ContactPage = () => {
 	});
 
 	const handleSubmit = async (value) => {
-		console.log(value);
 		CreateFun(value);
 	};
 
